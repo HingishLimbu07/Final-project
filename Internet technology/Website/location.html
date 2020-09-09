@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Location</title>
+	<link rel="icon" type="image/x-icon" href="img/t-1.jpg">	<!-- for icon in tytle bar -->
+	<link rel="stylesheet" type="text/css" href="css/Style.css">	<!-- link external css -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+
+	  $("a").on('click', function(event) {
+	    if (this.hash !== "") {
+
+	      event.preventDefault();
+
+	      var hash = this.hash;
+
+
+	      $('html, body').animate({
+	        scrollTop: $(hash).offset().top
+	      }, 800, function(){
+	   
+	        window.location.hash = hash;
+	      });
+	    } 
+	  });
+	});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="container">
+			<div class="header">
+				<ul class="ul-1">
+					<li class="li-1"><a href="index.html" class="nagBar">Home</a></li>
+					<li class="li-1"><a href="cv.html" class="nagBar">CV</a></li>
+					<li class="li-1"><a href="gallery.html" class="nagBar">Gallery</a></li>
+					<li class="li-1"><a href="Contact.html" class="nagBar">Contact</a></li>
+					<li class="li-1"><a href="location.html" class="active nagBar">My Location</a></li>
+				</ul>
+			</div>
+			<div class="body">
+				<H1>My Location</H1>
+				<div style="width:100%; height:600px;" title="">
+					<iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=The%20British%20College,%20Kathmandu%2044600+(The%20British%20College,%20Kathmandu)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="follow">
+					<h1>Follow me:</h1>
+					<a href="#" target="_blank"><img src="img\fb.jpg" alt="logo" width="50" height="50"></a>
+					<a href="#" target="_blank"><img src="img\twitter.png" alt="logo" width="50" height="50"></a>
+					<a href="#" target="_blank"><img src="img\insta.png" alt="logo" width="50" height="50"></a>
+				</div>
+				<p id="date"></p>
+				<p style="text-align: right; padding: 0 50px 10px 0; margin: -30px 0 0 0 ">&copy; 2020 Hingish Limbu</p>
+			</div>
+		</div>
+	</div>
+	<script src="JavaScript/function.js"></script>	<!-- link external java script -->
+</body>
+</html>

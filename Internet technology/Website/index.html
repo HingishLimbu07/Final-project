@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Basic HTML,CSS,JavaScript">
+	<meta name="keywords" content="HTML,CSS,JavaScript">
+	<meta name="author" content="Aman Maharjan">
+	<link rel="icon" type="image/x-icon" href="img/t-1.jpg">	<!-- for icon in title bar -->
+	<link rel="stylesheet" type="text/css" href="css/Style.css">	<!-- link external css -->
+</head>
+<body>
+	<div id="wrapper">
+		<div class="container">
+			<div class="header">
+				<ul class="ul-1">
+					<li class="li-1"><a href="index.html" class="active nagBar">Home</a></li>
+					<li class="li-1"><a href="cv.html" class="nagBar">CV</a></li>
+					<li class="li-1"><a href="research.html" class="nagBar">Research</a></li>
+					<li class="li-1"><a href="contact.html" class="nagBar">Contact</a></li>
+					<li class="li-1"><a href="location.html" class="nagBar">My Location</a></li>
+				</ul>
+			</div>
+			<div class="body">
+				<center>
+					<section>
+						<div class="slider-container" style="position: relative; width: 80%" >	<!-- creating conterner for all the images -->
+							<img class="slider" src="img/s-1.jpg" width="100%" height="500px">
+							<img class="slider" src="img/s-2.jpg" width="100%" height="500px">
+							<img class="slider" src="img/s-3.jpg" width="100%" height="500px">
+							<img class="slider" src="img/s-4.jpg" width="100%" height="500px">
+							<img class="slider" src="img/s-5.jpg" width="100%" height="500px">
+							<img class="slider" src="img/s-6.jpg" width="100%" height="500px">
+							<br>
+							<button onclick="change(-1)" class="prev" style="left: 0">&lt;</button>	<!-- create a button for previous -->
+							<button onclick="change(1)" class="next">&gt;</button>	<!-- create a button for next -->
+						</div>
+					</section>	
+					<p style="width: 600px;text-align: center;">This website contains Home, CV, Gallery, Contact, and My Location. In home page there is a slide slow for image which can be manually changed and also automatically  changed in every 3 sec. CV page contains my Resume. In Gallery section there are some random images. The contact page contains a feedback form. And at last in Location the location of college is shown.</p>
+				</center>
+			</div>
+			<div class="footer">
+				<div class="follow">
+					<h1>Follow me:</h1>
+					<a href="#" target="_blank"><img src="img\fb.jpg" alt="logo" width="50" height="50"></a>
+					<a href="#" target="_blank"><img src="img\twitter.png" alt="logo" width="50" height="50"></a>
+					<a href="#" target="_blank"><img src="img\insta.png" alt="logo" width="50" height="50"></a>
+				</div>
+				<p id="date"></p>	<!-- creating a block to display block -->
+				<p style="text-align: right; padding: 0 50px 10px 0; margin: -30px 0 0 0 ">&copy; 2020 Hingish Limbu>
+			</div>
+		</div>
+	</div>
+	<h1 id="date"></h1>
+	<script src="JavaScript/function.js"></script>	<!-- link external java script -->
+	<script>
+
+			// For manual change
+
+		var CurrentIndex = 0; //set curent index to 0
+		show(CurrentIndex); //show image having index equal to CurrentIndex
+
+		function change(n) {
+			CurrentIndex += n; //add or subtract 1 to CurrentIndex
+			show(CurrentIndex); //show image having index equal to CurrentIndex
+		}
+
+		function show(n) {
+			var i;
+			var x = document.getElementsByClassName("slider"); //gets all elements having class as "slider" and puts in an array
+						
+			if (n > x.length - 1) {
+		 		CurrentIndex = 0; //if n exceeds the indexes of the array then set CurrentIndex to 0
+			}    
+				if (n < 0) {
+				CurrentIndex = x.length - 1; //if n is negative then set CurrentIndex to the last index of the array
+			}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  //set display none to all elements 
+			}
+						
+			x[CurrentIndex].style.display = "block";  //set display block to element with index equal to CurrentIndex
+		}
+
+
+
+			// For auto slide
+
+		autoSlide();
+		function autoSlide(){
+			var i;
+			var x = document.getElementsByClassName("slider"); //gets all elements having class as "slider" and puts in an array
+						
+			for (i = 0; i < x.length; i++){
+				x[i].style.display = "none";   //set display none to all elements 
+			}
+			
+			if(CurrentIndex > x.length - 1){   //if n exceeds the indexes of the array then set CurrentIndex to 0
+				CurrentIndex = 0;
+			}
+			x[CurrentIndex].style.display = "block";  //set display block to element with index equal to CurrentIndex
+
+			CurrentIndex++;
+			setTimeout(autoSlide,3000);    //call autoslide every 3 second
+		}
+	</script>
+</body>
+</html>

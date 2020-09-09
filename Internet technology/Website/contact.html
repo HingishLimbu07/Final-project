@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	<link rel="icon" type="image/x-icon" href="img/t-1.jpg">	<!-- for icon in tytle bar -->
+	<link rel="stylesheet" type="text/css" href="css/Style.css">	<!-- link enternal css -->
+</head>
+<body>
+	<div id="wrapper">
+		<div class="container">
+			<div class="header">
+				<ul class="ul-1">
+					<li class="li-1"><a href="index.html" class="nagBar">Home</a></li>
+					<li class="li-1"><a href="cv.html" class="nagBar">CV</a></li>
+					<li class="li-1"><a href="gallery.html" class="nagBar">Gallery</a></li>
+					<li class="li-1"><a href="Contact.html" class="active nagBar">Contact</a></li>
+					<li class="li-1"><a href="location.html" class="nagBar">My Location</a></li>
+				</ul>
+			</div>
+			<div class="body">
+				
+					<div class="form_">
+						<table border = 0 align="center" width="400">
+						<h1>Feedback Form</h1>
+						<form name="Form" onsubmit="validateForm()">	<!-- on submit call validateform function -->
+							<tr>
+								<th>Name:</th>
+							
+								<td>
+									<input type="text" name="firstname" placeholder="enter first name">
+									
+									<input type="text" name="lastname" placeholder="enter last name" >
+								</td>
+							</tr>
+							<tr>
+								<th>Email:</th>
+								<td>
+									<input type="Email" name="email" placeholder="Something@gmail.com" size="46%">
+								</td>
+							</tr>
+							<tr>
+								<th>Subject:</th>
+								<td>
+									<input type="text" name="Sub" placeholder="Subject" size="46%">
+								</td>
+							</tr>
+							<tr>
+								<th>Gender:</th>
+								<td>
+									<input type="radio" name="gender" value="male" checked id="male">
+									<label for="male">Male</label>
+									<input type="radio" name="gender" value="female" id="Female">
+										<label for="Female">Female</label> 
+									<input type="radio" name="gender" value="other" id="Other">
+									<label for="Other">Other</label>
+								</td>
+							</tr>
+							<tr>
+								<th>Message:</th>
+								<td><textarea name="message" rows="10" cols="50" placeholder="Enter Message" ></textarea></td>
+							</tr>
+							<tr>
+								<th></th>
+								<td>
+									<input type="submit">&nbsp&nbsp&nbsp&nbsp&nbsp<input type="reset">
+								</td>
+							</tr>
+							<tr>
+								<th></th>
+								<td>
+									<p style="float: right;" >Looking forward to answering your email.</p>		
+								</td>
+							</tr>
+							
+						</form>
+				</table>
+			</div>
+				
+			</div>
+			<div class="footer">
+				<div class="follow">
+					<h1>Follow me:</h1>
+					<a href="#" target="_blank"><img src="img\fb.jpg" alt="logo" width="50" height="50"></a>
+					<a href="#" target="_blank"><img src="img\twitter.png" alt="logo" width="50" height="50"></a>
+					<a href="#" target="_blank"><img src="img\insta.png" alt="logo" width="50" height="50"></a>
+				</div>
+				<p id="date"></p>
+				<p style="text-align: right; padding: 0 50px 10px 0; margin: -30px 0 0 0 ">&copy; 2020 Hingish Limbu </p>
+			</div>
+		</div>
+	</div>
+	<script src="JavaScript/function.js"></script>	<!-- link external java script -->
+</body>
+</html>
